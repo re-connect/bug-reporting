@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BugController!{% endblock %}
+
+{% block body %}
+    <div class="container pt-3">
+        <div class="card border border-dark rounded">
+            <div class="card-body">
+                <h1>Nouveau bug</h1>
+                {{ form_start(form) }}
+                {{ form_widget(form.title) }}
+                {{ form_end(form) }}
+                <button type="submit" class="btn btn-success">Créer</button>
+            </div>
+        </div>
+
+        <hr/>
+        <h1>Tous les bugs</h1>
+
+        <ul>
+            {% for bug in bugs %}
+                <li>{{ bug.title }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
